@@ -9,33 +9,40 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const links = [
-        { name: "Sobre", href: "/#sobre" },
-        { name: "Experiência", href: "/#experiencia" },
-        { name: "Projetos", href: "/#projetos" },
-        { name: "Contato", href: "/#contato" },
+        { name: "Sobre", href: "#sobre" },
+        { name: "Experiência", href: "#experiencia" },
+        { name: "Projetos", href: "#projetos" },
+        { name: "Contato", href: "#contato" },
     ];
+
+    const scrollTo = (href: string) => {
+        const el = document.querySelector(href);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     return (
         <nav className="fixed w-full top-0 z-50 bg-white shadow-md">
             <div className="mx-auto w-full flex items-center justify-between px-6 py-4">
                 {/* Logo */}
-                <Link
-                    href="/"
-                    className="text-2xl font-bold text-blue-600"
+                <button
+                    onClick={() => scrollTo('#top')}
+                    className="text-2xl font-bold text-blue-600 cursor-pointer hover:text-blue-700 transition"
                 >
                     MeuSite
-                </Link>
+                </button>
 
                 {/* Desktop Menu */}
                 <div className="hidden items-center gap-8 md:flex">
                     {links.map((link) => (
-                        <Link
+                        <button
                             key={link.name}
-                            href={link.href}
+                            onClick={() => scrollTo(link.href)}
                             className="font-medium text-gray-700 transition hover:text-blue-600"
                         >
                             {link.name}
-                        </Link>
+                        </button>
                     ))}
                 </div>
 
@@ -58,14 +65,16 @@ export default function Navbar() {
                 <div className="border-t bg-white md:hidden">
                     <div className="flex flex-col gap-4 px-6 py-4">
                         {links.map((link) => (
-                            <Link
+                            <button
                                 key={link.name}
-                                href={link.href}
+                                onClick={() => {
+                                    scrollTo(link.href);
+                                    setIsOpen(false);
+                                }}
                                 className="font-medium text-gray-700 hover:text-blue-600"
-                                onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
-                            </Link>
+                            </button>
                         ))}
                     </div>
                 </div>
