@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import Marquee from "@/components/ui/Marquee";
 
 export default function About() {
     return (
@@ -17,18 +18,22 @@ export default function About() {
                     <p className="text-xl text-gray-700 mb-6 text-left">Também participei do Programa de iniciação à docência na graduação na UERJ, onde tive a oportunidade de desenvolver as minhas habilidades de trabalho em equipe, onde, junto com minha equipe, fomos encarregados de desenvolver algoritmos de inteligencia artificial e demonstrá-los para os alunos.</p>
                 </div>
 
-                <div className="mt-12 flex flex-wrap justify-start">
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">PHP</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Java</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">JavaScript</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">React</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Node.js</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">CSS</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">HTML</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Laravel</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Tailwind CSS</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">MySQL</Badge>
-                    <Badge className="mr-2 mb-2 bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">MongoDB</Badge>
+                <div className="mt-12">
+                    <Marquee speed={25}>
+                        <div className="flex gap-4 pr-4">
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">PHP</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Java</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">JavaScript</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">React</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Node.js</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">CSS</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">HTML</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Laravel</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">Tailwind CSS</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">MySQL</Badge>
+                            <Badge className="bg-blue-500 hover:bg-blue-600 text-lg p-4 text-gray-100">MongoDB</Badge>
+                        </div>
+                    </Marquee>
                 </div>
             </div>
         </div>
